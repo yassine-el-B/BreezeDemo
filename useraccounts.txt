@@ -1,16 +1,18 @@
   Hier zijn alle users log in
   
   tandarts@smilepro.nl
-  Tandenarts1234
+  test1234
 
   mondhygienist@smilepro.nl
-  Mondhygienist1234
+  test12344
 
   assistent@smilepro.nl
-  Assistent1234
+ test1234
 
   praktijkmanagement@smilepro.nl
-  Praktijkmanagement1234
+  test1234
 
   patient@smilepro.nl
-  Patient1234
+ test1234
+
+ Tandarts, Mondhygienist, Assistent,  Praktijkmanagement, Patient 

@@ -1,3 +1,7 @@
+/* Bootstrap eerst */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Tailwind erna */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

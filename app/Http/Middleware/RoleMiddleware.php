@@ -25,7 +25,10 @@ class RoleMiddleware
         if (!$user) {
             return redirect()->route('welcome');
         }
-
+$roleHierarchy = [
+    'praktijkmanagement' => ['praktijkmanagement', 'patient'],
+    'patient' => ['patient'],
+];
         $userRole = strtolower($user->rolename ?? '');
 
         // Controleer of rol toegestaan is
