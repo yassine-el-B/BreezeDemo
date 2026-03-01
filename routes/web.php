@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\AllergenenController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TandartsController;
 use App\Http\Controllers\PatientController;
@@ -54,6 +54,17 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+Route::middleware(['auth', 'role:tandarts,mondhygienist,assistent,praktijkmanagement'])
+    ->group(function () {
+        Route::get('/allergenen', [AllergenenController::class, 'index'])
+            ->name('allergenen.index');
+
+        Route::get('/allergenen/leverancier/{productId}', 
+            [AllergenenController::class, 'leverancier'])
+            ->name('allergenen.leverancier');
+    });
+    Route::get('/allergenen/leverancier/{productId}', [AllergenenController::class, 'leverancier'])
+    ->name('allergenen.leverancier');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

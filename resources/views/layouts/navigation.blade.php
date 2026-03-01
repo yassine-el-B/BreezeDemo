@@ -24,8 +24,18 @@
     </div>
 @endif
 
-
-
+@if (Auth::check() && in_array(strtolower(Auth::user()->rolename), [
+    'tandarts',
+    'mondhygienist',
+    'assistent',
+    'praktijkmanagement'
+]))
+    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+        <x-nav-link :href="route('allergenen.index')" :active="request()->routeIs('allergenen.index')">
+            {{ __('Overzicht Allergenen') }}
+        </x-nav-link>
+    </div>
+@endif
 @if (Auth::check() && Auth::user()->rolename === 'praktijkmanagement')
     <div class="flex space-x-8 sm:-my-px sm:ms-10">
         <x-nav-link :href="route('praktijkmanagement.userroles')"
